@@ -1,11 +1,49 @@
 .App {
   text-align: center;
+  padding: 16px;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
+
+.container {
+  width: 100%;
+}
+
+.content-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 12px;
+}
+
+@media (max-width:641px)  {
+  .content-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .form-group {
+    justify-content: center;
+    margin-bottom: 12px;
+  }
+}
+
+@media (min-width:650px) and (max-width:900px)  {
+  .content-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .form-group {
+    justify-content: center;
+    margin-bottom: 12px;
+  }
+}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
