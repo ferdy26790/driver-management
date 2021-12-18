@@ -1,0 +1,12 @@
+.container {
+  margin: 6px 0;
+}
+
+.container p {
+  margin: 0;
+}
+
+.labelValue {
+  font-size: 14px;
+  word-break: break-all;
+}

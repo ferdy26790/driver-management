@@ -1,0 +1,17 @@
+.avatarThumbnail {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: auto;
+}
+
+.avatarThumbnail img {
+  width: 100%;
+}
+
+.labelContainer {
+  display: grid;
+  gap: 6px;
+  margin-top: 6px;
+}
