@@ -26,7 +26,7 @@ export const StoreProvider = (props) => {
     .then((response) => response.json())
     .then((data) => {
       const totalPage = Math.ceil(Math.abs(data.results.length/5))
-      const dataNormalize = normalize(data.results, totalPage)
+      const dataNormalize = normalize(data.results, totalPage) // reformat data to be object with key for pagination
       setDrivers({
         meta: {
           status: 'SUCCESS',
@@ -53,11 +53,11 @@ export const StoreProvider = (props) => {
   }, [])
 
   useEffect(() => {
-    if (search) {
+    if (search) { // if search is submitted
       const searchDataFound = drivers.rawData.filter((d) => d.name.first.toUpperCase().indexOf(search.toUpperCase()) > -1);
       if (searchDataFound.length > 0) {
         const totalPage = Math.ceil(Math.abs(searchDataFound.length/5))
-        const dataNormalize = normalize(searchDataFound, totalPage)
+        const dataNormalize = normalize(searchDataFound, totalPage) // normalize search data found and set data state
         setDrivers({
           ...drivers,
           data: dataNormalize,
