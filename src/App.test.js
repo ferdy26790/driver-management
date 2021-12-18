@@ -1,8 +1,12 @@
+import React from 'react';
 import { shallow } from 'enzyme';
 import * as storeContext from './context';
 import {mockData} from './mockData'
 import App from './App';
-import Card from './components/Card';
+// import Card from './components/Card';
+
+const Card = React.lazy(() => import('./components/Card'))
+
 
 describe('App with data', () => {
   const contextValues = {
@@ -27,7 +31,10 @@ describe('App with data', () => {
     expect(appWrapper).toHaveLength(1);
   })
   it('should render 5 Card Component', () => {
-    expect(appWrapper.find(Card)).toHaveLength(5)
+    expect(appWrapper.find('.card-data-test')).toHaveLength(5)
+  })
+  it('should render pagination button', () => {
+    expect(appWrapper.find('.pagination-data-test')).toHaveLength(1)
   })
 });
 

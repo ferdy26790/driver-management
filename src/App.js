@@ -43,14 +43,16 @@ function App() {
             ?
             data
               ?
-              data[pagination.page]?.map((d, idx) => <Card key={Number(idx)} {...d}/>)
+              data[pagination.page]?.map((d, idx) => <div key={Number(idx)} className="card-data-test"><Card {...d}/></div>)
               :
               <div id="not-found">DATA NOT FOUND</div>
             :
             <div id="error">ERROR</div>
           }
           </div>
-          <Pagination onHandlePagination={handlePagination} {...pagination}/>
+          <div className="pagination-data-test">
+            <Pagination onHandlePagination={handlePagination} {...pagination}/>
+          </div>
         </div>
       </div>
     </Suspense>
